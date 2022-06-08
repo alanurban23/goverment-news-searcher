@@ -1,5 +1,5 @@
 const pomorskie = require('./pomorskie.json');
-const kujawskoPomorskie = require('./Kujawsko - Pomorskie.json');
+const kujawskoPomorskie = require('./kujawskoPomorskie.json');
 
 export const states = [
     { name: 'pomorskie', ep: pomorskie},
