@@ -7,12 +7,13 @@ const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 export const States = ({ setSelectedStates }: any) => {
+
   return (
     <>
       <Autocomplete
         multiple
         id="states"
-        options={states}
+        options={states.slice(0,2)}
         disableCloseOnSelect
         getOptionLabel={(option) => option.name}
         onChange={(_event, value) => setSelectedStates(value)}
