@@ -21,5 +21,7 @@ export const getYearNumber = (subDate) => {
     return `20${subDate.substring(3,5)}`;
 };
 
+export default dates;
+
 
 

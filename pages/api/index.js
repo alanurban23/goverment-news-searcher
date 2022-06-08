@@ -1,5 +1,5 @@
-import { states } from "../data/states";
-import { getYearNumber, getMonthNumber } from "../helpers/dates";
+import { states } from "../../data/states";
+import { getYearNumber, getMonthNumber } from "../../helpers/dates";
 
 export default function handler(req, res) {
   if (req.method === "GET") {
