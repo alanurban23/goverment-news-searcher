@@ -81,7 +81,7 @@ export default function Home() {
           color="default"
           sx={{ textAlign: "center" }}
         >
-          County Employment Office News
+          Agregator Aktualności Powiatowego Urzędu Pracy
         </Typography>
         ;
         <Grid container spacing={2}>
