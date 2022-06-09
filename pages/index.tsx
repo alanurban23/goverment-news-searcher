@@ -39,7 +39,7 @@ export default function Home() {
   const [states, setStates] = useState<ProvinceData[]>([]);
 
   const prepareDataToSend = async () => {
-    console.log(selectedStates);
+    
     const dataToSend = {
       provinces: selectedProvinceWithState.map((province) =>
         province.flat.toLocaleLowerCase()
@@ -50,7 +50,7 @@ export default function Home() {
       endDate: moment(dateTo).format("YYYY-MM-DD"),
     };
 
-    console.log("dataToSenddddddddddddd", dataToSend);
+    
 
     setQuery(dataToSend);
   };

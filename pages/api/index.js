@@ -4,7 +4,7 @@ import { getYearNumber, getMonthNumber } from "../../helpers/dates";
 export default function handler(req, res) {
   if (req.method === "GET") {
   } else if (req.method === "POST") {
-    console.log("req.body", req.body);
+    
     res.status(200).json(filter(req.body));
   }
 }
@@ -13,8 +13,8 @@ const filter = (query) => {
   const endDate = query.endDate ? new Date(query.endDate) : null;
 
   const filteredStates = () => query.states.map((queryState) => {
-    console.log(states);
-    console.log(queryState);
+    
+    
     return states.find((state) => state.name === queryState);
   });
 
@@ -54,7 +54,7 @@ const filter = (query) => {
       province.date = `${getYearNumber(province.restdate)}-${getMonthNumber(
         province.restdate
         )}-${province.daydate}`;
-        console.log("province.date", province.date);
+        
         return province;
       });
 
