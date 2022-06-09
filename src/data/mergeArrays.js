@@ -15,5 +15,5 @@ export const mergeArrays = () => {
   });
 
   // return mergedArray;
-  console.log(JSON.stringify(mergedArray));
+  
 };

@@ -20,7 +20,7 @@ export const Provinces: FC<ProvinceProps> = ({
 
   useEffect(() => {
     if (selectedStates.length) {
-      console.log(selectedStates);
+      
       const filtered = selectedStates
         .map((state) => {
           state.provinces.map((province) => {
@@ -31,11 +31,11 @@ export const Provinces: FC<ProvinceProps> = ({
         })
         .map((state) => state.provinces)
         .reduce(function (a, b) {
-          console.log(a);
+          
           return a.concat(b);
         });
 
-      console.log(filtered);
+      
       setFilteredStates(filtered);
     }
   }, [selectedStates]);
@@ -50,7 +50,7 @@ export const Provinces: FC<ProvinceProps> = ({
         disableCloseOnSelect
         getOptionLabel={(option) => option.name}
         onChange={(event, value) => {
-          console.log(value);
+          
           setSelectedProvinces(value);
         }}
         renderOption={(props, option, { selected }) => (
