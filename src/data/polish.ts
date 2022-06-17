@@ -49,7 +49,7 @@ export const polishProvinces = [
     ],
   },
   {
-    key: "zachodnio-pomorskie",
+    key: "zachodnioPomorskie",
     name: "Zachodnio Pomorskie",
     provinces: [
       { name: "Bialogard" },
@@ -75,7 +75,7 @@ export const polishProvinces = [
     ],
   },
   {
-    key: "warminsko-mazurskie",
+    key: "warminskoMazurskie",
     name: "Warmińsko Mazurskie",
     provinces: [
       { name: "Bartoszyce" },
