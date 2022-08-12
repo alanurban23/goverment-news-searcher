@@ -13,7 +13,7 @@ export const States = ({ setSelectedStates }: any) => {
       <Autocomplete
         multiple
         id="states"
-        options={states.slice(0,4)}
+        options={states}
         disableCloseOnSelect
         getOptionLabel={(option) => option.name}
         onChange={(_event, value) => setSelectedStates(value)}
