@@ -13,6 +13,7 @@ const swietokrzyskie = require('./swietokrzyskie.json');
 const warminskoMazurskie = require('./warminskoMazurskie.json');
 const wielkopolskie = require('./wielkopolskie.json');
 const zachodnioPomorskie = require('./zachodnioPomorskie.json');
+const slaskie = require('./slaskie.json');
 
 export const states = [
     { name: 'dolnoslaskie', ep: dolnoslaskie},
@@ -30,6 +31,7 @@ export const states = [
     { name: 'warminskoMazurskie', ep: warminskoMazurskie},
     { name: 'wielkopolskie', ep: wielkopolskie},
     { name: 'zachodnioPomorskie', ep: zachodnioPomorskie},
+    { name: 'slaskie', ep: slaskie},
 ]
 
 export default states;

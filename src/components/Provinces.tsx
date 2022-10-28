@@ -3,9 +3,16 @@ import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import { FC, useEffect, useState } from "react";
 import { State } from "../models/State";
+import { states } from "../data/States";
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
+
+interface ProvinceSelectedProps {
+  name: string,
+  flat: string,
+  stateName: string
+}
 
 interface ProvinceProps {
   selectedStates: State[];
@@ -20,8 +27,9 @@ export const Provinces: FC<ProvinceProps> = ({
 
   useEffect(() => {
     if (selectedStates.length) {
+      const data = selectedStates.find(state => state.key === 'wszystkie') ? states : selectedStates;
       
-      const filtered = selectedStates
+      const filtered = data
         .map((state) => {
           state.provinces.map((province) => {
             province.stateName = state.name;
@@ -31,14 +39,16 @@ export const Provinces: FC<ProvinceProps> = ({
         })
         .map((state) => state.provinces)
         .reduce(function (a, b) {
-          
           return a.concat(b);
         });
 
-      
+
+      filtered.unshift({name: 'wszystkie', flat: 'wszystkie', stateName: 'wszystkie'});
       setFilteredStates(filtered);
     }
   }, [selectedStates]);
+
+  console.log(filteredStates);
 
   return (
     <>
@@ -64,7 +74,6 @@ export const Provinces: FC<ProvinceProps> = ({
             {option.name}
           </li>
         )}
-        // style={{ width: 500 }}
         renderInput={(params) => (
           <TextField
             {...params}

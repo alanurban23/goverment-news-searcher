@@ -45,6 +45,7 @@ function ProvinceRow({ state }: ProvinceRow) {
             size="small"
             onClick={() => setOpen(!open)}
           >
+            {state.provinces.length}
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
@@ -94,20 +95,20 @@ function ProvinceRow({ state }: ProvinceRow) {
 }
 
 export const CollapsibleTable = ({ states }: StatesData) => {
-  // const { states } = props;
-
   return (
     <TableContainer component={Paper}>
       <Table aria-label="collapsible table">
         <TableHead>
           <TableRow>
             <TableCell />
-            <TableCell>Title</TableCell>
+            <TableCell>Województwo</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {states.map((state: State, index: React.Key | null | undefined) => (
-            <ProvinceRow key={index} state={state} />
+            <>
+              {state.provinces.length > 0 && <ProvinceRow key={index} state={state} />}
+            </>
           ))}
         </TableBody>
       </Table>

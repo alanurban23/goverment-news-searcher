@@ -12,28 +12,27 @@ const filter = (query) => {
   const startDate = query.startDate ? new Date(query.startDate) : null;
   const endDate = query.endDate ? new Date(query.endDate) : null;
 
-  const filteredStates = () => query.states.map((queryState) => {
-    
-    
-    return states.find((state) => state.name === queryState);
+  const filteredStates = () => query.states.includes('wszystkie') ? states : query.states.map((queryState) => {
+    return states.find((state) => {
+      return state.name === queryState;
+    });
   });
-
+  
+  
   
   const filteredProvinces = () => filteredStates().map((state) => {
-    if (query.provinces && query.provinces.length) {
+    if (query.provinces && query.provinces.length && !query.provinces.includes('wszystkie')) {
       state.provinces = state.ep.filter((el) => {
         if (query.provinces.includes(el.Province)) {
           return el;
         }
       });
-      // return state;
     } else {
       state.provinces = state.ep;
     }
-    // console.log(state);
     return state;
   });
-
+  
   
   const filteredSearch = () => filteredProvinces().map((state) => {
     if (query.search && query.search.length) {
@@ -46,9 +45,7 @@ const filter = (query) => {
 
     return state;
   });
-  
-  // console.log("filteredSearch", filteredSearch);
-  
+    
   const mapedDate = () => filteredSearch().filter((state) => {
     state.provinces = state.provinces.map((province) => {
       province.date = `${getYearNumber(province.restdate)}-${getMonthNumber(
