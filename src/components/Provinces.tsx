@@ -8,12 +8,6 @@ import { states } from "../data/States";
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
-interface ProvinceSelectedProps {
-  name: string,
-  flat: string,
-  stateName: string
-}
-
 interface ProvinceProps {
   selectedStates: State[];
   setSelectedProvinces: any;
@@ -38,17 +32,14 @@ export const Provinces: FC<ProvinceProps> = ({
           return state;
         })
         .map((state) => state.provinces)
-        .reduce(function (a, b) {
-          return a.concat(b);
-        });
+        .flat()
 
+        const merged = [[{name: 'wszystkie', flat: 'wszystkie', stateName: 'wszystkie'}], filtered];
 
-      filtered.unshift({name: 'wszystkie', flat: 'wszystkie', stateName: 'wszystkie'});
-      setFilteredStates(filtered);
+      setFilteredStates(merged.flat());
     }
   }, [selectedStates]);
 
-  console.log(filteredStates);
 
   return (
     <>
