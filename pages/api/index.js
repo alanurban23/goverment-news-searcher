@@ -4,7 +4,6 @@ import { getYearNumber, getMonthNumber } from "../../helpers/dates";
 export default function handler(req, res) {
   if (req.method === "GET") {
   } else if (req.method === "POST") {
-    
     res.status(200).json(filter(req.body));
   }
 }
@@ -32,12 +31,17 @@ const filter = (query) => {
     }
     return state;
   });
-  
+
+  const searchSubStringInString = (string, substring) => {
+    const reg = new RegExp(substring, 'gi');
+    return string.match(reg);
+  }
+
   
   const filteredSearch = () => filteredProvinces().map((state) => {
     if (query.search && query.search.length) {
       state.provinces = state.provinces.filter((province) => {
-        if (province.Title.includes(query.search)) {
+        if (searchSubStringInString(province.Title, query.search)) {
           return province;
         }
       });
