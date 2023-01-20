@@ -21,34 +21,29 @@ export const getYearNumber = (subDate) => {
     return `20${subDate.substring(3,5)}`;
 };
 
-//Create a function to add a bracket to the end of the json file
-export const addBracket = (json) => {
-    return json + ']';
-};
-
 //Create a function to read a json file and return as a api response in nextjs
 //Use this function in the api route
-export const readJson = (res, json) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.statusCode = 200;
-    res.end(json);
-};
+// export const readJson = (res, json) => {
+//     res.setHeader('Content-Type', 'application/json');
+//     res.statusCode = 200;
+//     res.end(json);
+// };
 
 //Write a service to read a json file and return as a api response in nextjs
 //Use this service in the getStaticProps function
-export const readJsonService = async (json) => {
-    const res = {
-        setHeader: () => {},
-        statusCode: 200,
-        end: () => {},
-    };
-    const data = await readJson(res, json);
-    return {
-        props: {
-            data,
-        },
-    };
-};
+// export const readJsonService = async (json) => {
+//     const res = {
+//         setHeader: () => {},
+//         statusCode: 200,
+//         end: () => {},
+//     };
+//     const data = await readJson(res, json);
+//     return {
+//         props: {
+//             data,
+//         },
+//     };
+// };
 
 export default dates;
 
