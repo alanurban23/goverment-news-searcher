@@ -49,4 +49,62 @@ export const states = [
 
 // addCloseBracket();
 
+// export function addCloseBracket() {
+//     for (let state of states) {
+//       try {
+//           // Read the file
+//           let data = fs.readFileSync(state.ep, 'utf8');
+  
+//           // Add a close bracket to the end of the JSON object
+//           data = data.slice(0, -1) + '}';
+  
+//           // Write the modified data back to the file
+//           fs.writeFileSync(state.ep, data);
+//       } catch (err) {
+//           if(err instanceof SyntaxError) {
+//               console.error(`There was a SyntaxError in the file ${state.ep}`);
+//           } else {
+//               console.error(`An error occurred while reading the file ${state.ep}`);
+//           }
+//       }
+//     }
+//   }
+
+  //Write a function to read a broken JSON file and return the data as a string
+    // export function readBrokenJSONFile() {
+    //     try {
+    //         // Read the file
+    //         let data = fs.readFileSync(states[0].ep, 'utf8');
+    //         console(data);
+    //     } catch (err) {
+    //         if(err instanceof SyntaxError) {
+    //             console.error(`There was a SyntaxError in the file ${state.ep}`);
+    //         } else {
+    //             console.error(`An error occurred while reading the file ${state.ep}`);
+    //         }
+    //     } finally {
+    //         console(data);
+    //         return data;
+    //     }
+    // }
+
+    // export function readBrokenJSONFile(filepath = states[0].ep) {
+    //     try {
+    //         // Read the file
+    //         let data = fs.readFileSync(filepath, 'utf8');
+            
+    //         // Attempt to parse the data as JSON
+    //         let jsonData = JSON.parse(data);
+    //         console.log(jsonData);
+    //     } catch (err) {
+    //         // If parsing fails, check if it's because of missing bracket
+    //         if (err instanceof SyntaxError && err.message.includes("Unexpected end of JSON input")) {
+    //             console.error(`The file ${filepath} is missing a closing bracket`);
+    //         } else {
+    //             console.error(`An error occurred while reading the file ${filepath}`);
+    //         }
+    //     }
+    // }
+
+
 export default states;

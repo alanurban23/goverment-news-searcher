@@ -10,8 +10,6 @@ import { useEffect, useState } from "react";
 import { State } from "../src/models/State";
 import { DateRange } from "../src/components/DateRange";
 import moment from "moment";
-import { Province } from "../src/models/Province";
-import { mergeArrays } from "../src/data/mergeArrays";
 
 interface Query {
   provinces?: Array<string>;

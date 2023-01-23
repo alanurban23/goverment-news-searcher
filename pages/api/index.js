@@ -1,5 +1,6 @@
-import { states } from "../../data/states";
+import states from "../../data/states";
 import { getYearNumber, getMonthNumber } from "../../helpers/dates";
+// import { states } from "../../src/data/States";
 
 export default function handler(req, res) {
   if (req.method === "GET") {
@@ -46,6 +47,10 @@ const filter = (query) => {
         }
       });
     }
+    else {
+      state.provinces = state.provinces;
+    }
+    console.log(state.provinces);
 
     return state;
   });
