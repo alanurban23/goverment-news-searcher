@@ -1,0 +1,6 @@
+[[edge_functions]]
+    function = "hello"
+    path = "/hello"
+
+[functions]
+  node_bundler = "esbuild"
